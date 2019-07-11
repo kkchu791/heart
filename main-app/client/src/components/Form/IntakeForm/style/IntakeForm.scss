@@ -6,12 +6,12 @@
   right: 0;
   width: 60%;
   min-width: 600px;
-  height: 1000px;
+  height: 4000px;
 }
 
 .intake-title {
   text-align: center;
-  background: #3122d6;
+  background: #03a9f4;
   color: white;
   font-size: 48px;
   padding: 20px 0;
@@ -21,7 +21,7 @@
 .intake-form {
   position: relative;
   margin: 50px;
-  height: 800px;
+  height: 3850px;
 }
 
 .submit-button {
@@ -37,4 +37,19 @@
   width: auto;
   height: auto;
   border: none;
+}
+
+.form-header-tab {
+  text-align: center;
+  display: inline-block;
+  width: 33.3%;
+  height: 100px;
+  text-decoration: underline;
+  line-height: 100px;
+  font-size: 18pt;
+  font-weight: 100;
+  &.active {
+    background: #f0f0f0;
+    text-decoration: none;
+  }
 }
