@@ -83,12 +83,13 @@ const GeneralInfoFormGroup = props => {
 
 const renderInput = (form_input, handleChange, values) => {
   return (
-    <div className="form-inputs">
+    <div key={form_input.label} className="form-inputs">
       <label className="label">{form_input.label}</label>
 
       {form_input.inputs.map(input => {
         return (
           <Field
+            key={input.value}
             component={RadioButton}
             name={input.name}
             label={input.value}

@@ -10,10 +10,10 @@ const FormNavigator = props => {
       <div className="intake-title">Intake Form ({active + 1} of 3)</div>
 
       <div className="form-header">
-
         <div
           className={`form-header-tab ${active === 0 ? 'active' : ''}`}
-          onClick={() => setActive(0)}>
+          onClick={() => setActive(0)}
+        >
           Personal Information
         </div>
         <div

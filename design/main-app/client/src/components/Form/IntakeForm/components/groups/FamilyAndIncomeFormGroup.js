@@ -40,21 +40,22 @@ const FamilyAndIncomeFormGroup = props => {
     <div className="general-info-form-group">
       <div className="title">Family and Income</div>
 
-      {form.map(form_inputs =>
-        renderInputs(form_inputs, props.handleChange, props.values)
+      {form.map(form_input =>
+        renderInputs(form_input, props.handleChange, props.values)
       )}
     </div>
   )
 }
 
-const renderInputs = (form_inputs, handleChange, values) => {
+const renderInputs = (form_input, handleChange, values) => {
   return (
-    <div className="form-inputs">
-      <label className="label">{form_inputs.label}</label>
+    <div key={form_input.label} className="form-inputs">
+      <label className="label">{form_input.label}</label>
 
-      {form_inputs.inputs.map(input => {
+      {form_input.inputs.map(input => {
         return (
           <Field
+            key={input.value}
             component={RadioButton}
             name={input.name}
             label={input.value}

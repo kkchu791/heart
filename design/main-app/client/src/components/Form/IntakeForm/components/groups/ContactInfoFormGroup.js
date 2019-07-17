@@ -91,6 +91,7 @@ const ContactInfoFormGroup = props => {
       {form.map(input => {
         return (
           <div
+            key={input.label}
             className={`form-inputs ${
               input.show || showExtraField ? null : 'hidden'
             }`}

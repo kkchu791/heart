@@ -6,6 +6,7 @@ import FormNavigator from '../shared/FormNavigator'
 import PersonalInfo from './containers/PersonalInfo'
 import Obligations from './containers/Obligations'
 import Agreement from './containers/Agreement'
+import Intake from '../../Intake'
 
 const IntakeForm = () => {
   return (
@@ -25,4 +26,4 @@ const IntakeForm = () => {
   )
 }
 
-export default IntakeForm
+export default Intake(IntakeForm);
