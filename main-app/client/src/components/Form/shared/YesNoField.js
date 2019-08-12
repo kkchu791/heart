@@ -20,9 +20,7 @@ const useStyles = makeStyles(theme => ({
     textAlign: 'center',
     borderLeft: '1px solid gray',
     padding: '10px',
-    height: '100%',
     borderRadius: 'unset',
-    height: '2px solid gray',
   },
   active_yes: {
     backgroundColor: '#b5b3b3',
