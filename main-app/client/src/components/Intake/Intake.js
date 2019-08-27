@@ -7,6 +7,7 @@ import ProgramInfoFormGroup from './ProgramInfoFormGroup'
 import OnsiteObligationsFormGroup from './OnsiteObligationsFormGroup'
 import PersonalInfoForm from './PersonalInfoForm'
 import { Grid } from '@material-ui/core'
+import * as Yup from 'yup';
 
 export const Intake = () => {
   const localStorageClick = data => {

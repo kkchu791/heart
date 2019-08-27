@@ -1,5 +1,5 @@
 import React from 'react'
-import { Field } from 'formik'
+import { Field, ErrorMessage } from 'formik'
 import { BasicField } from '../Form/shared'
 import { makeStyles } from '@material-ui/core/styles'
 
@@ -130,19 +130,21 @@ const form = [
 ]
 
 const ContactInfoFormGroup = props => {
+  console.log(props, 'props check it ')
   const classes = useStyles()
   return (
     <div className="contact-info-form-group">
       <h4>Contact Information</h4>
 
       {form.map(form_input =>
-        renderInput(form_input, props.handleChange, props.values, classes)
+        renderInput(form_input, props.handleChange, props.handleBlur, props.values, classes, props.errors, props.touched)
       )}
     </div>
   )
 }
 
-const renderInput = (form_input, handleChange, values, classes) => {
+const renderInput = (form_input, handleChange, handleBlur, values, classes, errors, touched) => {
+  console.log(errors, "touched")
   return (
     <div key={form_input.label} className={classes.formInput}>
       <label className={classes.label}>
@@ -151,17 +153,20 @@ const renderInput = (form_input, handleChange, values, classes) => {
       </label>
       {form_input.inputs.map(input => {
         return (
-          <Field
-            key={input.value}
-            component={form_input.component}
-            name={input.name}
-            label={input.value}
-            type={input.type}
-            placeholder={input.placeholder}
-            value={input.value}
-            onChange={handleChange}
-            values={values}
-          />
+          <div>
+            <Field
+              key={input.value}
+              component={form_input.component}
+              name={input.name}
+              label={input.value}
+              type={input.type}
+              placeholder={input.placeholder}
+              value={input.value}
+              onChange={handleChange}
+              values={values}
+              error={errors[input.name] && touched[input.name]}
+            />
+          </div>
         )
       })}
     </div>

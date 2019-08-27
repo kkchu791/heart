@@ -8,10 +8,18 @@ import FamilyAndIncomeFormGroup from './FamilyAndIncomeFormGroup'
 import AgreementsFormGroup from './AgreementsFormGroup'
 import { Grid } from '@material-ui/core'
 import {createParticipant} from '../../actions/participant'
+import * as Yup from 'yup';
+
+const ValidationSchema = Yup.object().shape({
+  first_name: Yup.string().required('First Name is required.')
+});
 
 const PersonalInfoForm = () => {
   return (
-    <Formik onSubmit={values => console.log(values, "onSubmit")}>
+    <Formik
+      onSubmit={values => console.log(values, "onSubmit")}
+      initialValues={{ first_name: '' }}
+      validationSchema={ValidationSchema}>
       {props => (
         <Form>
           <ClinicFormGroup {...props} />
